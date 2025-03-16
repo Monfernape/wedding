@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 346.8 77.2% 49.8%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 346.8 77.2% 49.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Montserrat", sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+  }
+  p {
+    font-family: "Cormorant Garamond", serif;
+    @apply text-base md:text-lg;
+  }
+}
+
+/* Decorative elements */
+.fancy-divider {
+  position: relative;
+  height: 20px;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.fancy-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.5), transparent);
+}
+
+.fancy-divider::after {
+  content: "❦";
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+  background: white;
+  color: #be123c;
+  font-size: 1.2rem;
+}
+
+.gold-text {
+  background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.elegant-card {
+  position: relative;
+  border: 1px solid rgba(218, 165, 32, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.elegant-card::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid rgba(218, 165, 32, 0.2);
+  pointer-events: none;
+}
+
+.elegant-input {
+  border-width: 0 0 1px 0;
+  border-radius: 0;
+  border-color: rgba(218, 165, 32, 0.5);
+  background-color: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.elegant-input:focus {
+  border-color: #be123c;
+  box-shadow: none;
+  outline: none;
+}
+
+.initial-letter p:first-of-type::first-letter {
+  initial-letter: 2;
+  -webkit-initial-letter: 2;
+  color: #be123c;
+  font-weight: bold;
+  margin-right: 0.1em;
+  font-family: "Playfair Display", serif;
+}
+
